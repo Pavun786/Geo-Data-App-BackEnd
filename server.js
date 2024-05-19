@@ -14,7 +14,7 @@ dotenv.config()
 
 const app = express();
 app.use(cors({
-   origin : "https://geo-data-app-front-end.vercel.app/"
+   origin : "https://geo-data-app-front-end.vercel.app"
 }));
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
