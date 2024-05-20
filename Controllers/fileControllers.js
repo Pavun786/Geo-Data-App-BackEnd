@@ -46,7 +46,7 @@ const fs = require('fs');
       await newFile.save();
       res.status(201).json({ message: 'File uploaded successfully', file: newFile });
     } catch (error) {
-      console.error('Error uploading file:', error);
+      console.error('Error uploading file:', error.message);
       res.status(400).json({ message: 'Error uploading file', error });
     }
   };
