@@ -1,10 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const path = require('path');
+// const path = require('path');
 const dotenv = require("dotenv")
 const dbConnection = require("./db_Connection/db.js")
 const cors = require('cors');
-const fs = require('fs');
+// const fs = require('fs');
 const authRoute = require("./Routes/userRoutes")
 const markerRoute = require("./Routes/markerRoutes.js")
 const fileRoute = require("./Routes/fileRoutes.js")
@@ -17,7 +17,7 @@ app.use(cors({
      origin : "*"
 }));
 app.use(express.json());
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use("/auth",authRoute)
 app.use("/route",markerRoute)
@@ -26,10 +26,10 @@ app.use("/route",shapeRoute)
 app.use("/api",distancePointesRoute)
 
 // Ensure the uploads directory exists
-const uploadsDir = path.join(__dirname, 'uploads');
-if (!fs.existsSync(uploadsDir)) {
-  fs.mkdirSync(uploadsDir);
-}
+// const uploadsDir = path.join(__dirname, 'uploads');
+// if (!fs.existsSync(uploadsDir)) {
+//   fs.mkdirSync(uploadsDir);
+// }
 
 // Database setup
 dbConnection()
